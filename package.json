@@ -1,0 +1,20 @@
+{
+  "name": "karma-experiments",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Module1.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.1.0"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Denis Kolesnikov",
+  "license": "ISC"
+}

@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Sun Feb 15 2015 16:01:02 GMT+0600 (NOVT)
 
+var browserifyES6Transpiler = require('browserify-es6-transpiler');
+
 module.exports = function(config) {
   config.set({
 
@@ -10,11 +12,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['traceur', 'commonjs', 'mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
+      'Module*.js',
       'test/**/*.spec.js'
     ],
 
@@ -27,8 +30,16 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'Module*.js': ['traceur', 'commonjs'],
+      'test/**/*.spec.js': ['traceur', 'commonjs']
     },
 
+    traceurPreprocessor: {
+      options: {
+        sourceMaps: false,
+        modules: 'commonjs'
+      }
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

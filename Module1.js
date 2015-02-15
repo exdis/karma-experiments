@@ -1,4 +1,4 @@
-import Module2 from 'Module2';
+import Module2 from './Module2';
 
 class Module1 extends Module2 {
 
@@ -7,4 +7,4 @@ class Module1 extends Module2 {
   }
 }
 
-export default Module2;
+export default Module1;
